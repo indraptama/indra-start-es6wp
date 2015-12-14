@@ -10,10 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "normalize.css": "^3.0.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "suitcss": "^0.8.0"
+    "suitcss": "^0.8.0",
+    "suitcss-base": "^1.0.1",
+    "suitcss-components-button": "^5.0.0",
+    "suitcss-components-grid": "^3.0.1",
+    "suitcss-utils-flex": "^0.3.1"
   },
   "devDependencies": {
     "alt": "^0.18.1",

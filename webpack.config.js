@@ -40,7 +40,7 @@ module.exports = {
       {
         test: /\.js[x]?$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: ['babel'],
         query: {
           presets:['es2015','react']
         }
@@ -66,7 +66,7 @@ module.exports = {
       }
     ]
   },
-  // just for testing in the example page
+
 
   postcss: [
     atImport({
