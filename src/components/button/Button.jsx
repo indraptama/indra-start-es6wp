@@ -1,12 +1,12 @@
 'use strict';
-import Grid from 'suitcss-components-button';
 import React from 'react';
+import './button.css';
 
 class ButtonS extends React.Component {
 
   render() {
     return (
-      <div className={Grid}/>
+      <button className="Button">RED</button>
     );
   }
 
