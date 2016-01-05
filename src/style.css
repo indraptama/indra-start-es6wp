@@ -1,7 +1,6 @@
 @import "suitcss-base";
 
-body {
-  color: teal;
-  display: flex;
-  font-family: lato;
+html {
+  color: grey;
+  font-size: 200%;
 }

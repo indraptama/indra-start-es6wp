@@ -1,7 +1,7 @@
 require('./style.css');
-import ButtonS from './components/button/button.jsx';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import HelloWorld from './components/HelloWorld.jsx';
 
-ReactDOM.render(<ButtonS />, document.querySelector('main'));
+ReactDOM.render(<HelloWorld />, document.querySelector('#app'));

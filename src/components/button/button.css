@@ -1,6 +1,0 @@
-@import "suitcss-base";
-@import "suitcss-components-button";
-
-.Button {
-  background: red;
-}
