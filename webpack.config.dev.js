@@ -12,7 +12,9 @@ const mqPacker = require('css-mqpacker');
 const resText = require('postcss-responsive-type');
 const cssFocus = require('postcss-focus');
 const cssNested = require('postcss-nested');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const cssNot = require('postcss-selector-not');
+
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
@@ -33,22 +35,22 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    //new ExtractTextPlugin('app.css', { allChunks: true }),
-    //new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
+    // new ExtractTextPlugin('app.css', { allChunks: true }),
+    // new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
   ],
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         include: path.join(__dirname, 'src'),
-        //loaders: ['react-hot', 'babel'],
+        // loaders: ['react-hot', 'babel'],
         loader: 'babel',
       },
       // css loader
       {
         test: /\.css/,
         include: path.join(__dirname, 'src'),
-        //loader: ExtractTextPlugin.extract('style', 'css!postcss'),
+        // loader: ExtractTextPlugin.extract('style', 'css!postcss'),
         loader: 'style!css!postcss',
       },
       {
@@ -58,8 +60,13 @@ module.exports = {
       // file loaders
       // img loader
       {
-        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|otf)$/,
-        loader: 'url-loader?limit=8192&name=assets/[name].[ext]',
+        test: /\.(png|jpg|jpeg|gif|svg|webp)$/,
+        loader: 'url-loader?limit=8192&name=assets/img/[name].[ext]',
+      },
+      // Font Loader
+      {
+        test: /\.(woff|woff2|ttf|otf|eot)$/,
+        loader: 'url-loader?limit=8192&name=assets/fonts/[name].[ext]',
       },
     ],
   },
@@ -76,6 +83,7 @@ module.exports = {
       hexA(),
       cssFocus(),
       resText(),
+      cssNot(),
       autoprefixer(),
       mqPacker(),
       cssReport({ clearMessages: true }),
