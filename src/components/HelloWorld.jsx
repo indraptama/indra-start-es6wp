@@ -3,7 +3,7 @@ import React from 'react';
 export default class HelloWorld extends React.Component {
   render() {
     // Play with it...
-    const name = 'World indradddedeijijijijidededede';
+    const name = 'indra pratama putra';
 
     return (
       <h2 className="hello-world">
